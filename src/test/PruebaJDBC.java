@@ -3,10 +3,10 @@ package test;
 import java.sql.*;
 import java.util.List;
 
-import dao.ActorDao;
-import dao.ActorDaoJDBC;
-import dao.ConexionFinal;
-import dao.modelo.ActorDTO;
+import dao.modelo.ActorDao;
+import dao.modelo.ActorDao;
+import dao.modelo.ConexionFinal;
+import dao.modelo.entidades.ActorDTO;
 
 public class PruebaJDBC {
 
@@ -17,7 +17,7 @@ public class PruebaJDBC {
         try {
             conexion = ConexionFinal.getConnection();
 
-            ActorDao actorDAO = new ActorDaoJDBC(conexion);
+            ActorDao actorDAO = new ActorDao(conexion);
             
             List<ActorDTO> actores = actorDAO.select();
             
@@ -31,8 +31,8 @@ public class PruebaJDBC {
         System.out.println("Nuevo actor: Antonio López antonio@gmail.com");
         	        
         
-            ActorDTO nuevoActor= new ActorDTO("Antonio","López","antonio@gmail.com");
-            actorDAO.insert(nuevoActor);
+           // ActorDTO nuevoActor= new ActorDTO("Antonio","López","antonio@gmail.com");
+            //actorDAO.insert(nuevoActor);
             
             System.out.println("\n\nLISTADO ACTUALIZADO de actores: ");
              
